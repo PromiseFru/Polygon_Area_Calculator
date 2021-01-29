@@ -18,7 +18,17 @@ class Rectangle:
     def get_diagonal(self):
         return((self.width ** 2 + self.height ** 2) ** .5)
 
-    # def get_picture(self):
+    def get_picture(self):
+        W = ""
+        L = ""
+
+        for j in range(self.width):
+            W += "*"
+        for i in range(self.height):
+            L += "{}\n".format(W)
+
+        return L
+
 
     # def get_amount_inside(self):
 
@@ -34,4 +44,4 @@ print(rect.get_area())
 rect.set_height(3)
 print(rect.get_perimeter())
 print(rect)
-# print(rect.get_picture())
+print(rect.get_picture())
