@@ -12,15 +12,26 @@ class Rectangle:
     def get_area(self):
         return (self.width*self.height)
     
-    def get_perimater(self):
-        return(2 * width + 2 * height)
+    def get_perimeter(self):
+        return(2 * self.width + 2 * self.height)
 
     def get_diagonal(self):
-        return((width ** 2 + height ** 2) ** .5)
+        return((self.width ** 2 + self.height ** 2) ** .5)
 
-    def get_picture(self):
+    # def get_picture(self):
 
-    def get_amount_inside(self):
+    # def get_amount_inside(self):
 
+    def __str__(self):
+        result = "Rectangle(width={}, height={})".format(self.width, self.height)
+        return result
 
 # class Square:
+
+
+rect = Rectangle(10,5)
+print(rect.get_area())
+rect.set_height(3)
+print(rect.get_perimeter())
+print(rect)
+# print(rect.get_picture())
