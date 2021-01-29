@@ -3,9 +3,11 @@ class Rectangle:
         self.width = width
         self.height = height
     
-    def set_width(self):
+    def set_width(self, width):
+        self.width = width
 
-    def set_height(self):
+    def set_height(self, height):
+        self.height = height
 
     def get_area(self):
         return (self.width*self.height)
@@ -21,8 +23,4 @@ class Rectangle:
     def get_amount_inside(self):
 
 
-
-
-
-
-class Square:
+# class Square:
