@@ -45,14 +45,35 @@ class Rectangle:
         result = "Rectangle(width={}, height={})".format(self.width, self.height)
         return result
 
-# class Square:
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
+        # self.side = side
+
+    def set_side(self, s_side):
+        self.side = s_side
+        super().__init__(s_side, s_side)
+
+    def __str__(self):
+        result = "Square(side={})".format(self.side)
+        return result
 
 
-rect = Rectangle(12, 5)
-rect2 = Rectangle(4,4)
-print(rect.get_area())
+
+# rect = Rectangle(10, 5)
+# print(rect.get_area())
 # rect.set_height(3)
-print(rect.get_perimeter())
-print(rect)
-print(rect.get_picture())
-print(rect.get_amount_inside(rect2))
+# print(rect.get_perimeter())
+# print(rect)
+# print(rect.get_picture())
+
+# sq = Square(9)
+# print(sq.get_area())
+# sq.set_side(4)
+# print(sq.get_diagonal())
+# print(sq)
+# print(sq.get_picture())
+
+# rect.set_height(8)
+# rect.set_width(16)
+# print(rect.get_amount_inside(sq))
