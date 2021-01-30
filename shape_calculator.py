@@ -22,6 +22,9 @@ class Rectangle:
         W = ""
         L = ""
 
+        if (self.width>50 or self.height>50):
+            return "Too big for picture."
+
         for j in range(self.width):
             W += "*"
         for i in range(self.height):
@@ -48,11 +51,17 @@ class Rectangle:
 class Square(Rectangle):
     def __init__(self, side):
         super().__init__(side, side)
-        # self.side = side
+        self.side = side
 
     def set_side(self, s_side):
         self.side = s_side
         super().__init__(s_side, s_side)
+
+    def set_width(self, width):
+        self.side = width
+
+    def set_height(self, height):
+        self.side = height
 
     def __str__(self):
         result = "Square(side={})".format(self.side)
