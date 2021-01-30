@@ -28,9 +28,18 @@ class Rectangle:
             L += "{}\n".format(W)
 
         return L
+    
+    def count(self, pw, ph,cw,ch):
+        width = int(pw/cw)
+        height = int(ph/ch)
+        result = width*height
+        return result
 
-
-    # def get_amount_inside(self):
+    def get_amount_inside(self,shape):
+        if (self.width<shape.width or self.height<shape.height):
+            return 0
+        count = self.count(self.width, self.height, shape.width, shape.height)
+        return count
 
     def __str__(self):
         result = "Rectangle(width={}, height={})".format(self.width, self.height)
@@ -39,9 +48,11 @@ class Rectangle:
 # class Square:
 
 
-rect = Rectangle(10,5)
+rect = Rectangle(12, 5)
+rect2 = Rectangle(4,4)
 print(rect.get_area())
-rect.set_height(3)
+# rect.set_height(3)
 print(rect.get_perimeter())
 print(rect)
 print(rect.get_picture())
+print(rect.get_amount_inside(rect2))
